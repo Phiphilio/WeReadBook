@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliothèque en Ligne</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="../JS/index.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Gestion de la Bibliothèque</h1>
+    <input type="text" id="searchInput" placeholder="Rechercher un livre par titre..." />
+    <div id="sortButtons">
+      <button id="sortAsc">Trier par date de sortie (Ascendant)</button>
+      <button id="sortDesc">Trier par date de sortie (Descendant)</button>
+    </div>
+  </header>
+  <main>
+    <div id="bookList">
+    </div>
+  </main>
+</body>
+
+</html>
+<!-- j'ai récupéré cette version du fichier grâce à cette commande git restore --source=<commit_id> --staged --worktree chemin/du/fichier
+pour l'utiliser, voici un exemple :
+git restore --source=abcdef1234 --staged --worktree JS/index.js
+
+  -->

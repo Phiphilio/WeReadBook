@@ -1,0 +1,11 @@
+{
+  "name": "weradbooks",
+  "version": "1.0.0",
+  "description": "projet Pepi Dev\r Objectif du Projet\r Développer un outil de gestion en ligne pour le prêt de livres d'une bibliothèque.\r Préparation avant le début du projet\r À la fin de cette étape, vous devez avoir un dépôt GitHub contenant le HTML et le CSS\r fournis. L'application web doit être accessible dans un navigateur, et vous devez disposer\r d'une liste non exhaustive des éléments qui ne fonctionnent pas dans l'intégration actuelle.\r Création du front-end et intégration des données\r À la fin de cette étape, la page d'accueil doit afficher une liste de livres générée de manière\r dynamique à partir du JSON.\r Mise en place de la recherche de livres\r À la fin de cette étape, vous devez pouvoir rechercher des livres par titre et voir l'affichage\r se mettre à jour de manière dynamique, sans rechargement de la page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
