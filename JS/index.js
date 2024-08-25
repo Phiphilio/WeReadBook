@@ -60,17 +60,19 @@ function rechercherLivres(recherche, bok) {
     // récupère le div qui contiendra tous les livres
     const listeLivres = document.querySelector(".block-liste-item")
     listeLivres.innerHTML = ""
-
+    let livreExiste = false;
     bok.forEach(boks => {
         const test = regex.test(boks.title)
 
         if (test) {
             livresObtenus(boks, listeLivres)
-        } else if (!test){
-            livresObtenus(false,listeLivres )
-        }
+            livreExiste = true
+        } 
     });
-    
+    // Si aucun livre n'a été trouvé, afficher le message correspondant
+    if (!livreExiste) {
+        livresObtenus(null, listeLivres); // Appel avec un livre falsy
+    }
 }
 
 function livresObtenus(livreTrouve, listeLivres) {
@@ -129,7 +131,8 @@ function livresObtenus(livreTrouve, listeLivres) {
         bookDiv.className = "pasDeLivre"
 
         const Paragraphe = document.createElement("p")
-        Paragraphe.innerText = "Aucun livre ne correspond à votre recherche "
+        Paragraphe.innerText = "Aucun livre ne correspond votre  recherche "
+
         bookDiv.appendChild(Paragraphe)
 
         listeLivres.appendChild(bookDiv)
