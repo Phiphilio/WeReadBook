@@ -66,8 +66,11 @@ function rechercherLivres(recherche, bok) {
 
         if (test) {
             livresObtenus(boks, listeLivres)
+        } else if (!test){
+            livresObtenus(false,listeLivres )
         }
     });
+    
 }
 
 function livresObtenus(livreTrouve, listeLivres) {
@@ -85,7 +88,7 @@ function livresObtenus(livreTrouve, listeLivres) {
         bookDiv.setAttribute('data-author', livreTrouve.author)
         bookDiv.setAttribute('data-release-date', livreTrouve.published_date)
 
-        //je donne un lien
+        //je donne un lien factice
         link.href = "#"
 
         listeItem.className = "categorie-liste-item"
@@ -107,7 +110,7 @@ function livresObtenus(livreTrouve, listeLivres) {
 
         //ajout dans link
         link.appendChild(listeItem)
-        console.log("test")
+
         //ajout dans bookDiv
         bookDiv.appendChild(link)
         // ajout dans listeLivres
@@ -116,14 +119,17 @@ function livresObtenus(livreTrouve, listeLivres) {
         // récupère le div qui contiendra tous les livres
         console.log("test")
         const listeLivres = document.querySelector(".block-liste-item")
-        listeLivres.innerHTML = "" // je nettoie le dom
+        listeLivres.innerHTML = "" 
+        /**je nettoie le dom sinon à chaque fois que la boucle forEach de la fonction rechercherLivres
+         * n'allait pas trouver de livres, un bloc allait être crée pour chaque fois que le regex vérifie
+         * là, je n'ai qu'un seul message 
+         * */ 
 
         const bookDiv = document.createElement("div");
-        bookDiv.className = "book"
+        bookDiv.className = "pasDeLivre"
 
         const Paragraphe = document.createElement("p")
-        Paragraphe.innerText = "Aucun livre ne correspond à la recherche "
-
+        Paragraphe.innerText = "Aucun livre ne correspond à votre recherche "
         bookDiv.appendChild(Paragraphe)
 
         listeLivres.appendChild(bookDiv)
