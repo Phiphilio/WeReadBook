@@ -185,7 +185,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 150px;
+        margin-bottom: 200px;
         flex-direction: column;
     }
 
@@ -195,7 +195,7 @@ main {
 
     .block-liste-item {
         display: flex;
-        margin-left: 20%;
+        margin-left: 14%;
         max-width: 962px;
         min-width: 920px;
         flex-wrap: wrap;
