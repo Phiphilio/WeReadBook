@@ -46,9 +46,9 @@ se mettre à jour de manière dynamique, sans rechargement de la page.
 14. Ce tri doit se faire en temps réel, sans rechargement de la page.
 15. Le tri doit être compatible avec la recherche : il doit être possible de trier les résultats
     d'une recherche ou de rechercher dans une liste triée.
-16. Créer une base de données vide avec le nom bibliotheque.
+16. Créer une base de données vide avec le nom bibliotheque.X
 17. Exécuter le script SQL fourni dans la base de donnée créé pour générer la table et les
-    données nécessaires.
+    données nécessaires.X
 18. Modifier la page d'accueil d'index.html vers index.php.
 19. Retirer le code JavaScript qui charge et affiche le contenu du JSON sur la page
     d'accueil.

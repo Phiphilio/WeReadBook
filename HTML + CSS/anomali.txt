@@ -1,8 +1,0 @@
-La recherche ne fonctionne pas 
-les boutons 
-le systeme de trie ( trie par genre)
-du css pour que ce sois jolie a voir 
-rajouter une wishlist 
-interface pour se connecté 
-je modifie un truc ici aussi
-je modifie un autre truc ici, histoire de pratiquer les commandes git.
