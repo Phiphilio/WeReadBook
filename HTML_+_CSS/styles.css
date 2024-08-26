@@ -1,0 +1,538 @@
+body {
+    margin: 0;
+    font-family: 'Lato';
+    /* voiolà comment j'ajoute une police d'écriture*/
+}
+
+main {
+    gap: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*quand aucun livre n'a été trouvé, le message doit s'afficher comme ça*/
+.pasDeLivre {
+    color: #0c1f34;
+    font-size: 30px;
+    font-weight: bold;
+    /* display: flex; */
+    /* justify-content: center; */
+    position: absolute;
+    left: 3%;
+}
+
+/* pour les écrans desktop*/
+@media screen and (min-width: 1024px) {
+
+    .container {
+        padding-left: calc(15px*2);
+        /*calcul de la taille voulu*/
+        padding-right: calc(15px*2);
+    }
+
+    /** barre de navigation**/
+    header {
+        background-color: #000000;
+        color: #fff;
+        height: 88px;
+    }
+
+    .navigation {
+        margin-right: 30px;
+        margin-left: 30px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation div {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 50px;
+    }
+
+    .navigation div a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    #HelpLink {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 2px solid #fff;
+        height: 35px;
+        display: flex;
+    }
+
+    #HelpLink:hover {
+        text-decoration: underline;
+
+    }
+
+
+    .navigation div {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 50px;
+    }
+
+    .submitButton {
+        background-color: #000000;
+        font-size: 24px;
+        color: white;
+        border: solid 1px;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .submitButton:hover {
+        cursor: pointer;
+    }
+
+    .signButton {
+        background-color: #4C5FD5;
+        font-size: 24px;
+        color: white;
+        border: solid 0px;
+        border-radius: 5px;
+        padding-right: 35px;
+        padding-left: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 1rem;
+    }
+
+    .signButton:hover {
+        background-color: #fff;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    /*pour la zone de l'input*/
+    .middleTop {
+        display: flex;
+        justify-content: center;
+        /*pour le gradient, j'ai utilisé le cite  : https://www.learnui.design/tools/gradient-generator.html*/
+        background: linear-gradient(180deg, #4c5fd5, #5464d7, #8285e1, #d5d3f5, #faf9fe, #ffffff);
+        height: 400px;
+    }
+
+    .searchBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 80px;
+        gap: 30px;
+    }
+
+
+    .searchForm {
+        display: flex;
+        align-items: center;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        background-color: #fff;
+
+    }
+
+    .searchForm:hover {
+        border: 1px solid #4C5FD5;
+        color: #4C5FD5;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        width: 690px;
+        border-radius: 5px 0 0 5px;
+        height: 50px;
+    }
+
+    input::placeholder {
+        color: #b7b8be;
+        font-size: 100%;
+    }
+
+
+    .arrowButton {
+        padding: 10px;
+        background-color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrowButton:hover {
+        color: #4C5FD5;
+    }
+
+    /*la zone du milieu*/
+    .middle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 200px;
+        flex-direction: column;
+    }
+
+    #sortButtons {
+        margin-bottom: 25px;
+    }
+
+    .block-liste-item {
+        display: flex;
+        margin-left: 14%;
+        max-width: 962px;
+        min-width: 920px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .block-liste-item div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 50px;
+    }
+
+    .block-liste-item div a {
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 50px;
+        width: 350px;
+    }
+
+    .categorie-liste-item {
+        min-height: 115px;
+        /* width: 50%; */
+        margin-bottom: 48px;
+        padding-right: 15px;
+        max-width: 350px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px;
+        filter: drop-shadow(5px 0px 5px #0c1f34);
+    }
+
+    /*pour le footer*/
+    .footer-container {
+        background-color: #000000;
+        height: 300px;
+        position: relative;
+    }
+
+    .inner-footer-container {
+        display: flex;
+        flex-direction: row;
+        padding-left: 125px;
+
+    }
+
+    .footer-column {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin-right: 100px;
+    }
+
+    .footer-column h3 {
+        font-size: 23px;
+    }
+
+    .footer-column a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .copyright-footer-column {
+        color: #fff;
+        font-size: 23px;
+        position: absolute;
+        /*pour la position, quand je mets absolute, l'élément va choisir sa position par rapport
+        à l'élément parent ou grand parent qui aura lui aussi une position (quelle que soit la valeur
+        de cette position).
+        ici par exemple, son ancêtre qui à le style position le plus proche est : .footer-container
+        donc il choisir sa position en fonction des bordures de ce conteneur.
+        S'il n'y avait aucun ancêtre avec le style position,
+         il allait se référer au viewport (la fenêtre visible du navigateur)
+        */
+        right: 75px;
+        bottom: 45px;
+    }
+}
+
+/*pour les écrans de tablette*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding-left: calc(15px*2);
+        /*calcul de la taille voulu*/
+        padding-right: calc(15px*2);
+    }
+
+    /** barre de navigation**/
+    header {
+        background-color: #000000;
+        color: #fff;
+        height: 150px;
+    }
+
+    .navigation {
+        margin-right: 30px;
+        margin-left: 30px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navTitle {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 50px;
+    }
+
+    .navButton {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 50px;
+    }
+
+    .navigation div a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    #HelpLink {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 2px solid #fff;
+        height: 35px;
+        display: flex;
+    }
+
+    #HelpLink:hover {
+        text-decoration: underline;
+
+    }
+
+
+    .navigation div {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 50px;
+    }
+
+    .submitButton {
+        background-color: #000000;
+        font-size: 24px;
+        color: white;
+        border: solid 1px;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .submitButton:hover {
+        cursor: pointer;
+    }
+
+    .signButton {
+        background-color: #4C5FD5;
+        font-size: 24px;
+        color: white;
+        border: solid 0px;
+        border-radius: 5px;
+        padding-right: 35px;
+        padding-left: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 1rem;
+    }
+
+    .signButton:hover {
+        background-color: #fff;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    /*pour la zone de l'input*/
+    .middleTop {
+        display: flex;
+        justify-content: center;
+        /*pour le gradient, j'ai utilisé le cite  : https://www.learnui.design/tools/gradient-generator.html*/
+        background: linear-gradient(180deg, #4c5fd5, #5464d7, #8285e1, #d5d3f5, #faf9fe, #ffffff);
+        height: 400px;
+    }
+
+    .searchBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 80px;
+        gap: 30px;
+    }
+
+
+    .searchForm {
+        display: flex;
+        align-items: center;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        background-color: #fff;
+
+    }
+
+    .searchForm:hover {
+        border: 1px solid #4C5FD5;
+        color: #4C5FD5;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        width: 690px;
+        border-radius: 5px 0 0 5px;
+        height: 50px;
+    }
+
+    input::placeholder {
+        color: #b7b8be;
+        font-size: 100%;
+    }
+
+
+    .arrowButton {
+        padding: 10px;
+        background-color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrowButton:hover {
+        color: #4C5FD5;
+    }
+
+    /*la zone du milieu*/
+    .middle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 150px;
+        flex-direction: column;
+    }
+
+    #sortButtons {
+        margin-bottom: 25px;
+    }
+
+    .block-liste-item {
+        display: flex;
+        margin-left: 20%;
+        max-width: 962px;
+        min-width: 920px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .block-liste-item div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 50px;
+    }
+
+    .block-liste-item div a {
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 50px;
+        width: 350px;
+    }
+
+    .categorie-liste-item {
+        min-height: 115px;
+        /* width: 50%; */
+        margin-bottom: 48px;
+        padding-right: 15px;
+        max-width: 350px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px;
+        filter: drop-shadow(5px 0px 5px #0c1f34);
+    }
+
+    /*pour le footer*/
+    .footer-container {
+        background-color: #000000;
+        height: 300px;
+        position: relative;
+    }
+
+    .inner-footer-container {
+        display: flex;
+        flex-direction: row;
+        padding-left: 125px;
+
+    }
+
+    .footer-column {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin-right: 100px;
+    }
+
+    .footer-column h3 {
+        font-size: 23px;
+    }
+
+    .footer-column a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .copyright-footer-column {
+        color: #fff;
+        font-size: 23px;
+        position: absolute;
+        /*pour la position, quand je mets absolute, l'élément va choisir sa position par rapport
+        à l'élément parent ou grand parent qui aura lui aussi une position (quelle que soit la valeur
+        de cette position).
+        ici par exemple, son ancêtre qui à le style position le plus proche est : .footer-container
+        donc il choisir sa position en fonction des bordures de ce conteneur.
+        S'il n'y avait aucun ancêtre avec le style position,
+         il allait se référer au viewport (la fenêtre visible du navigateur)
+        */
+        right: 75px;
+        bottom: 45px;
+    }
+}
