@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . "/../backend/connexionDb.php");
-
+//var_dump($listeLivre);
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,6 +39,18 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
         <button id="sortDesc">Trier par date de sortie (Descendant)</button>
       </div>
       <div class="block-liste-item">
+        <?php foreach ($listeLivre as $livre) : ?>
+          <div class="book"data-title=<?php echo  $livre["titre"];?> data-author = <?php echo  $livre["auteur"];?> data-release-date=<?php echo  $livre["date_sortie"];?> >
+            <a href="#">
+              <div class="categorie-liste-item">
+                <div class="categorie-liste-item-contenu">
+                  <h2> <?php echo $livre["titre"]?></h2>
+                  <p> <?php echo "Par ".$livre["titre"] ."<br>Date de sortie: ". $livre["date_sortie"]  ?></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endforeach ?>
       </div>
       </div>
     </section>

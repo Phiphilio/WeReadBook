@@ -50,7 +50,7 @@ async function afficherLivres() {
 }
 
 // j'appelle la fonction pour qu'elle s'exécute
-afficherLivres()
+//afficherLivres()
 
 //fonction de recherche de livre
 function rechercherLivres(recherche, bok) {
@@ -67,7 +67,7 @@ function rechercherLivres(recherche, bok) {
         if (test) {
             livresObtenus(boks, listeLivres)
             livreExiste = true
-        } 
+        }
     });
     // Si aucun livre n'a été trouvé, afficher le message correspondant
     if (!livreExiste) {
@@ -121,11 +121,11 @@ function livresObtenus(livreTrouve, listeLivres) {
         // récupère le div qui contiendra tous les livres
         console.log("test")
         const listeLivres = document.querySelector(".block-liste-item")
-        listeLivres.innerHTML = "" 
+        listeLivres.innerHTML = ""
         /**je nettoie le dom sinon à chaque fois que la boucle forEach de la fonction rechercherLivres
          * n'allait pas trouver de livres, un bloc allait être crée pour chaque fois que le regex vérifie
          * là, je n'ai qu'un seul message 
-         * */ 
+         * */
 
         const bookDiv = document.createElement("div");
         bookDiv.className = "pasDeLivre"

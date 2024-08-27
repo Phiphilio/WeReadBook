@@ -9,8 +9,8 @@
         </div>
         <div class="navButton">
             <section>
-                <button class="submitButton"> submit a request</button>
-                <button class="signButton"> sign in</button>
+                <button class="submitButton"> soumettre une requete</button>
+                <button class="signButton"> s'inscrire</button>
             </section>
         </div>
     </div>

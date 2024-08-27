@@ -49,12 +49,12 @@ se mettre à jour de manière dynamique, sans rechargement de la page.
 16. Créer une base de données vide avec le nom bibliotheque.X
 17. Exécuter le script SQL fourni dans la base de donnée créé pour générer la table et les
     données nécessaires.X
-18. Modifier la page d'accueil d'index.html vers index.php.
+18. Modifier la page d'accueil d'index.html vers index.php.X
 19. Retirer le code JavaScript qui charge et affiche le contenu du JSON sur la page
-    d'accueil.
+    d'accueil.X
 20. Ajouter au sommet de la page le code PHP permettant de récupérer la liste des livres
     depuis la base de données et de l'afficher sur la page d'accueil. Les fonctionnalités de
-    tri et de recherche doivent rester inchangées.
+    tri et de recherche doivent rester inchangées.X
 21. Sur la page d'accueil, créer un formulaire de type POST contenant un bouton pour
     chaque livre. Chaque livre doit avoir son propre formulaire contenant uniquement ce
     bouton.
