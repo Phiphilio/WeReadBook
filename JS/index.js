@@ -1,5 +1,5 @@
 async function afficherLivres() {
-    const reponse = await fetch('../JS/livres.json')
+    const reponse = await fetch('../backend/jsonData.php')
     const livres = await reponse.json()
 
     // récupère le div qui contiendra tous les livres
@@ -14,9 +14,9 @@ async function afficherLivres() {
         const contenuListeItem = document.createElement("div")
 
         bookDiv.className = "book"
-        bookDiv.setAttribute('data-title', livres[i].title)
-        bookDiv.setAttribute('data-author', livres[i].author)
-        bookDiv.setAttribute('data-release-date', livres[i].published_date)
+        bookDiv.setAttribute('data-title', livres[i].titre)
+        bookDiv.setAttribute('data-author', livres[i].auteur)
+        bookDiv.setAttribute('data-release-date', livres[i].date_sortie)
 
         //je donne un lien
         link.href = "#"
@@ -25,10 +25,10 @@ async function afficherLivres() {
         contenuListeItem.className = "categorie-liste-item-contenu"
 
         const h2 = document.createElement("h2")
-        h2.innerText = livres[i].title
+        h2.innerText = livres[i].titre
 
         const firstParagraphe = document.createElement("p")
-        firstParagraphe.innerHTML = "Par " + livres[i].author + "<br>Date de sortie: " + livres[i].published_date
+        firstParagraphe.innerHTML = "Par " + livres[i].auteur + "<br>Date de sortie: " + livres[i].date_sortie
 
         //ajout dans contenuListeItem
 
@@ -62,7 +62,7 @@ function rechercherLivres(recherche, bok) {
     listeLivres.innerHTML = ""
     let livreExiste = false;
     bok.forEach(boks => {
-        const test = regex.test(boks.title)
+        const test = regex.test(boks.titre)
 
         if (test) {
             livresObtenus(boks, listeLivres)
@@ -86,9 +86,9 @@ function livresObtenus(livreTrouve, listeLivres) {
         const contenuListeItem = document.createElement("div")
 
         bookDiv.className = "book"
-        bookDiv.setAttribute('data-title', livreTrouve.title)
-        bookDiv.setAttribute('data-author', livreTrouve.author)
-        bookDiv.setAttribute('data-release-date', livreTrouve.published_date)
+        bookDiv.setAttribute('data-title', livreTrouve.titre)
+        bookDiv.setAttribute('data-author', livreTrouve.auteur)
+        bookDiv.setAttribute('data-release-date', livreTrouve.date_sortie)
 
         //je donne un lien factice
         link.href = "#"
@@ -97,10 +97,10 @@ function livresObtenus(livreTrouve, listeLivres) {
         contenuListeItem.className = "categorie-liste-item-contenu"
 
         const h2 = document.createElement("h2")
-        h2.innerText = livreTrouve.title
+        h2.innerText = livreTrouve.titre
 
         const firstParagraphe = document.createElement("p")
-        firstParagraphe.innerHTML = "Par " + livreTrouve.author + "<br>Date de sortie: " + livreTrouve.published_date
+        firstParagraphe.innerHTML = "Par " + livreTrouve.auteur + "<br>Date de sortie: " + livreTrouve.date_sortie
 
         //ajout dans contenuListeItem
 
@@ -145,7 +145,7 @@ const searchInput = document.getElementById("searchInput");
 //ajout d'un listener qui écoute l'évènement keydown et qui regarde quand keydown correspond à la touche entrer (enter)
 searchInput.addEventListener("keydown", async (event) => {
     // le lsiterner écoute juste les touches
-    const reponse = await fetch('../JS/livres.json')
+    const reponse = await fetch('../backend/jsonData.php')
     const livres = await reponse.json()
     const value = searchInput.value;
 
