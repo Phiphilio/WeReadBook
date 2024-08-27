@@ -24,3 +24,4 @@ $livreStatement->execute();
 //l'ensemble des informations sont récupérées dans un tableau associatif
 //le tableau est stocké dans $listeLivre
 $listeLivre = $livreStatement->fetchAll();
+
