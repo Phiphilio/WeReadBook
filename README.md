@@ -57,12 +57,12 @@ se mettre à jour de manière dynamique, sans rechargement de la page.
     tri et de recherche doivent rester inchangées.X
 21. Sur la page d'accueil, créer un formulaire de type POST contenant un bouton pour
     chaque livre. Chaque livre doit avoir son propre formulaire contenant uniquement ce
-    bouton.
+    bouton.X
 22. Ajouter au formulaire un input de type hidden contenant l'ID du livre tel que récupéré
-    depuis la base de données.
-23. Créer un script PHP à la racine du projet nommé reservation.php.
+    depuis la base de données.X
+23. Créer un script PHP à la racine du projet nommé reservation.php.X
 24. Ajouter l'action ./reservation.php au formulaire pour que ce soit ce script qui s'exécute à
-    la soumission du formulaire.
+    la soumission du formulaire.X
 25. Dans le script reservation.php, écrire le code pour :
     À la fin de cette étape, vous devez pouvoir réserver un livre sur la page d'accueil. En
     cliquant sur le bouton de réservation d'un livre, l'apparence du titre doit changer et la valeur

@@ -9,9 +9,11 @@ async function afficherLivres() {
     for (let i = 0; i < livres.length; i++) {
         //je créé une div
         const bookDiv = document.createElement("div");
-        const link = document.createElement("a")
+        const form = document.createElement("form")
         const listeItem = document.createElement("div")
         const contenuListeItem = document.createElement("div")
+        const input = document.createElement("input")
+        const button = document.createElement("button")
 
         bookDiv.className = "book"
         bookDiv.setAttribute('data-title', livres[i].titre)
@@ -19,7 +21,7 @@ async function afficherLivres() {
         bookDiv.setAttribute('data-release-date', livres[i].date_sortie)
 
         //je donne un lien
-        link.href = "#"
+        form.action = "../backend/reservations.php"
 
         listeItem.className = "categorie-liste-item"
         contenuListeItem.className = "categorie-liste-item-contenu"
@@ -30,19 +32,28 @@ async function afficherLivres() {
         const firstParagraphe = document.createElement("p")
         firstParagraphe.innerHTML = "Par " + livres[i].auteur + "<br>Date de sortie: " + livres[i].date_sortie
 
+        //les attributs d'input
+        input.type = "hidden"
+        input.name = "id"
+        input.value = livres[i].id
+
+        //valeur de button
+        button.innerText = "rerserver"
+
         //ajout dans contenuListeItem
 
         contenuListeItem.appendChild(h2)
         contenuListeItem.appendChild(firstParagraphe)
-
+        contenuListeItem.appendChild(input)
+        contenuListeItem.appendChild(button)
         //ajout dans listeItem
         listeItem.appendChild(contenuListeItem)
 
-        //ajout dans link
-        link.appendChild(listeItem)
+        //ajout dans form
+        form.appendChild(listeItem)
 
         //ajout dans bookDiv
-        bookDiv.appendChild(link)
+        bookDiv.appendChild(form)
         // ajout dans listeLivres
         listeLivres.appendChild(bookDiv)
 
@@ -81,9 +92,11 @@ function livresObtenus(livreTrouve, listeLivres) {
 
         //je créé le bloc qui contiendra les infos du livre
         const bookDiv = document.createElement("div");
-        const link = document.createElement("a")
+        const form = document.createElement("form")
         const listeItem = document.createElement("div")
         const contenuListeItem = document.createElement("div")
+        const input = document.createElement("input")
+        const button = document.createElement("button")
 
         bookDiv.className = "book"
         bookDiv.setAttribute('data-title', livreTrouve.titre)
@@ -91,7 +104,7 @@ function livresObtenus(livreTrouve, listeLivres) {
         bookDiv.setAttribute('data-release-date', livreTrouve.date_sortie)
 
         //je donne un lien factice
-        link.href = "#"
+        form.action = "../backend/reservations.php"
 
         listeItem.className = "categorie-liste-item"
         contenuListeItem.className = "categorie-liste-item-contenu"
@@ -101,22 +114,31 @@ function livresObtenus(livreTrouve, listeLivres) {
 
         const firstParagraphe = document.createElement("p")
         firstParagraphe.innerHTML = "Par " + livreTrouve.auteur + "<br>Date de sortie: " + livreTrouve.date_sortie
+        //les attributs d'input
+        input.type = "hidden"
+        input.name = "id"
+        input.value = livreTrouve.id
+
+        //valeur de button
+        button.innerText = "rerserver"
 
         //ajout dans contenuListeItem
 
         contenuListeItem.appendChild(h2)
         contenuListeItem.appendChild(firstParagraphe)
-
+        contenuListeItem.appendChild(input)
+        contenuListeItem.appendChild(button)
         //ajout dans listeItem
         listeItem.appendChild(contenuListeItem)
 
-        //ajout dans link
-        link.appendChild(listeItem)
+        //ajout dans form
+        form.appendChild(listeItem)
 
         //ajout dans bookDiv
-        bookDiv.appendChild(link)
+        bookDiv.appendChild(form)
         // ajout dans listeLivres
         listeLivres.appendChild(bookDiv)
+        console.log("test")
     } else {
         // récupère le div qui contiendra tous les livres
         console.log("test")

@@ -40,19 +40,21 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
       </div>
       <div class="block-liste-item">
         <?php foreach ($listeLivre as $livre) : ?>
-          <div class="book"data-title=<?php echo  $livre["titre"];?> data-author = <?php echo  $livre["auteur"];?> data-release-date=<?php echo  $livre["date_sortie"];?> >
-            <a href="#">
+          <div class="book" data-title=<?php echo  $livre["titre"]; ?> data-author=<?php echo  $livre["auteur"]; ?> data-release-date=<?php echo  $livre["date_sortie"]; ?>>
+            <form action="../backend/reservations.php">
               <div class="categorie-liste-item">
                 <div class="categorie-liste-item-contenu">
-                  <h2> <?php echo $livre["titre"]?></h2>
-                  <p> <?php echo "Par ".$livre["titre"] ."<br>Date de sortie: ". $livre["date_sortie"]  ?></p>
-                </div>
-              </div>
-            </a>
+                  <h2> <?php echo $livre["titre"] ?></h2>
+                  <p> <?php echo "Par " . $livre["titre"] . "<br>Date de sortie: " . $livre["date_sortie"]  ?></p>
+                  <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
+                  <button>réserver</button>
+            </form>
           </div>
-        <?php endforeach ?>
       </div>
       </div>
+    <?php endforeach ?>
+    </div>
+    </div>
     </section>
   </main>
   <!--on récupère le footer-->
