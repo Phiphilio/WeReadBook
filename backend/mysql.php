@@ -8,4 +8,4 @@ $mdp = "";
 $dbId = "root";
 
 // on stocke la requête sql
-$requeteRecup = "SELECT * FROM `livres` WHERE disponible = 1";
+$requeteRecup = "SELECT * FROM `livres`";
