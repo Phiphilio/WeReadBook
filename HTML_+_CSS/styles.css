@@ -20,7 +20,8 @@ main {
     position: absolute;
     left: 3%;
 }
-.Reserve{
+
+.Reserve {
     color: red;
 }
 
@@ -84,19 +85,19 @@ main {
         padding-left: 50px;
     }
 
-    .submitButton {
+    .loginButton {
         background-color: #000000;
         font-size: 24px;
         color: white;
         border: solid 1px;
         border-radius: 5px;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 35px;
+        padding-left: 35px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
 
-    .submitButton:hover {
+    .loginButton:hover {
         cursor: pointer;
     }
 
@@ -200,11 +201,15 @@ main {
         display: flex;
         margin-left: 14%;
         max-width: 962px;
-         min-width: 920px;
+        min-width: 920px;
         flex-wrap: wrap;
         position: relative;
     }
-
+    .categorie-liste-item-contenu {
+        display: flex;
+        /* flex-wrap: wrap; */
+        margin-right: 50px;
+    }
     .block-liste-item div {
         display: flex;
         flex-wrap: wrap;
@@ -221,10 +226,10 @@ main {
     }
 
     .categorie-liste-item {
-        min-height: 115px;
+        height: 246px;
         /* width: 50%; */
         margin-bottom: 48px;
-        padding-right: 15px;
+        /* padding-right: 15px; */
         max-width: 350px;
         background-color: white;
         border-radius: 20px;
@@ -345,7 +350,7 @@ main {
         padding-left: 50px;
     }
 
-    .submitButton {
+    .loginButton {
         background-color: #000000;
         font-size: 24px;
         color: white;
@@ -357,7 +362,7 @@ main {
         padding-bottom: 10px;
     }
 
-    .submitButton:hover {
+    .loginButton:hover {
         cursor: pointer;
     }
 
@@ -466,9 +471,9 @@ main {
         position: relative;
     }
 
-    .block-liste-item div {
+    .categorie-liste-item-contenu {
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         margin-right: 50px;
     }
 

@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif; /* Ajout de la police d'écriture */
+    background: conic-gradient(from 45deg at 40% 50%, #ffffff, #d6d4f6, #adabeb, #8184e1, #4c5fd5);
+}
+
+.container {
+    padding-left: calc(15px*2);
+    /*calcul de la taille voulu*/
+    padding-right: calc(15px*2);
+}
+
+/** barre de navigation**/
+header {
+   /* background: linear-gradient(0deg, #000000, #1b1c34, #2c3165, #3c479b, #4c5fd5);*/
+    color: #fff;
+    height: 88px;
+}
+
+.navigation {
+    margin-right: 30px;
+    margin-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+    padding-left: 50px;
+}
+
+.navigation div a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#HelpLink {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #fff;
+    height: 35px;
+    display: flex;
+}
+
+#HelpLink:hover {
+    text-decoration: underline;
+
+}
+
+
+.navigation div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+    padding-left: 50px;
+}
+
+/*le main et ce qu'il contiendra*/
+main {
+    gap: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+   
+}
+main div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.titre{
+    color: white;
+}
+.formInscription, .formConnexion {
+    min-height: 115px;
+    width: 35%;
+    height: 360px;
+    margin-bottom: 48px;
+    padding-right: 15px;
+    /* max-width: 350px; */
+    background-color: white;
+    border-radius: 20px;
+    padding: 7px;
+    filter: drop-shadow(5px 0px 5px #4C5FD5);
+}
+/*l'interieur du formulaire*/
+form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 5px;
+}
+form label {
+    font-style: italic;
+}
+form input {
+    /* padding: 10px; */
+    font-size: 16px;
+    border: solid 1px;
+    outline: none;
+    width: 350px;
+    border-radius: 5px;
+    height: 40px;
+}
+
+form button {
+    color: white;
+    background: #4C5FD5;
+    border: 0px;
+    border-radius: 7px;
+}
+
+form a {
+    text-decoration: none;
+}
+form a:hover{
+    color: #4C5FD5;
+    text-decoration: underline;
+}
