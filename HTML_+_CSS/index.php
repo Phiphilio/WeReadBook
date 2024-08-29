@@ -41,13 +41,20 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
       <div class="block-liste-item">
         <?php foreach ($listeLivre as $livre) : ?>
           <div class="book" data-title=<?php echo  $livre["titre"]; ?> data-author=<?php echo  $livre["auteur"]; ?> data-release-date=<?php echo  $livre["date_sortie"]; ?>>
-            <form action="../backend/reservations.php">
+            <form action="../backend/reservations.php" method="post">
               <div class="categorie-liste-item">
                 <div class="categorie-liste-item-contenu">
-                  <h2> <?php echo $livre["titre"] ?></h2>
-                  <p> <?php echo "Par " . $livre["titre"] . "<br>Date de sortie: " . $livre["date_sortie"]  ?></p>
-                  <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                  <button>réserver</button>
+                  <?php if ($livre["disponible"] === 1) : ?>
+                    <h2> <?php echo $livre["titre"] ?></h2>
+                    <p> <?php echo "Par " . $livre["titre"] . "<br>Date de sortie: " . $livre["date_sortie"]  ?></p>
+                    <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
+                    <button>réserver</button>
+                  <?php else: ?>
+                    <h2 class="Reserve"> <?php echo $livre["titre"] ?></h2>
+                    <p> <?php echo "Par " . $livre["titre"] . "<br>Date de sortie: " . $livre["date_sortie"]  ?></p>
+                    <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
+                    <button>non disponible</button>
+                  <?php endif ?>
             </form>
           </div>
       </div>

@@ -20,6 +20,9 @@ main {
     position: absolute;
     left: 3%;
 }
+.Reserve{
+    color: red;
+}
 
 /* pour les écrans desktop*/
 @media screen and (min-width: 1024px) {
@@ -197,7 +200,7 @@ main {
         display: flex;
         margin-left: 14%;
         max-width: 962px;
-        /* min-width: 920px; */
+         min-width: 920px;
         flex-wrap: wrap;
         position: relative;
     }

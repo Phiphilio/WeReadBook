@@ -22,11 +22,13 @@ async function afficherLivres() {
 
         //je donne un lien
         form.action = "../backend/reservations.php"
+        form.method ="post"
 
         listeItem.className = "categorie-liste-item"
         contenuListeItem.className = "categorie-liste-item-contenu"
 
         const h2 = document.createElement("h2")
+        h2.className = disponibleSwap(livres[i].disponible)
         h2.innerText = livres[i].titre
 
         const firstParagraphe = document.createElement("p")
@@ -38,7 +40,7 @@ async function afficherLivres() {
         input.value = livres[i].id
 
         //valeur de button
-        button.innerText = "rerserver"
+        button.innerText = disponibleButton(livres[i].disponible)
 
         //ajout dans contenuListeItem
 
@@ -105,12 +107,15 @@ function livresObtenus(livreTrouve, listeLivres) {
 
         //je donne un lien factice
         form.action = "../backend/reservations.php"
+        form.method ="post"
 
         listeItem.className = "categorie-liste-item"
         contenuListeItem.className = "categorie-liste-item-contenu"
 
         const h2 = document.createElement("h2")
+        h2.className = disponibleSwap(livreTrouve.disponible)
         h2.innerText = livreTrouve.titre
+
 
         const firstParagraphe = document.createElement("p")
         firstParagraphe.innerHTML = "Par " + livreTrouve.auteur + "<br>Date de sortie: " + livreTrouve.date_sortie
@@ -120,7 +125,7 @@ function livresObtenus(livreTrouve, listeLivres) {
         input.value = livreTrouve.id
 
         //valeur de button
-        button.innerText = "rerserver"
+        button.innerText = disponibleButton(livreTrouve.disponible)
 
         //ajout dans contenuListeItem
 
@@ -184,3 +189,18 @@ searchInput.addEventListener("input", () => {
         afficherLivres()
     }
 })
+
+function disponibleSwap(value){
+    if(value!==1){
+        return "Reserve";
+    }
+}
+
+function disponibleButton(value){
+    if(value==1){
+        //comme c'est égale à 1, c'est possible de réserver
+        return "reserver";
+    } else {
+        return "non disponible"
+    }
+}
