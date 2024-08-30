@@ -1,3 +1,7 @@
+# précision
+Pour des raisons de logistique et d'organisation, différente version du projet ont été mise en place.
+pour avoir accès à chaqu'une d'entre elle, il vous suffit de choisir la branche portant le nom du développeur qui vous interesse.
+
 # WeReadBooks
 
 projet Pepi Dev
