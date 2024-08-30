@@ -114,10 +114,15 @@ form input {
 form button {
     color: white;
     background: #4C5FD5;
-    border: 0px;
+    border: 1px solid white;
     border-radius: 7px;
 }
-
+form button:hover {
+    color: #4C5FD5;
+    background: white;
+    border: 1px solid black;
+    border-radius: 7px;
+}
 form a {
     text-decoration: none;
 }

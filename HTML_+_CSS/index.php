@@ -7,7 +7,7 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
 
 <head>
   <meta charset="UTF-8">
-  <title> 2i tech Academy</title>
+  <title> WeReadBook</title>
   <link href="styles.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

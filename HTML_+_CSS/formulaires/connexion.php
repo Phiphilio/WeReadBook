@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title> 2i tech Academy</title>
+  <title> WeReadBook</title>
   <link href="formStyles.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
