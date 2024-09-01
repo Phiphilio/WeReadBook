@@ -217,6 +217,27 @@ main {
         padding: 5px;
         filter: drop-shadow(5px 0px 5px #0c1f34);
         margin-right: 70px;
+        transition: all 5s;
+    }
+
+    .categorie-liste-item::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("monteCristo.jpeg");
+        background-size: cover;
+        background-position: center;
+        transition: opacity 1s ease;
+        opacity: 0;
+    }
+    .categorie-liste-item:hover::before {
+
+        background-color: white;
+        
+        opacity: 1;
     }
 
     .categorie-liste-item-contenu {
@@ -225,13 +246,15 @@ main {
         margin-right: 50px;
         flex-direction: column;
         gap: 15px;
-        width: 600px;
+        width: 360px;
     }
+
     .categorie-liste-item-contenu button {
         border-radius: 30px;
         width: 100px;
         height: 37px;
     }
+
     .block-liste-item div a {
         text-decoration: none;
         color: #000000;
