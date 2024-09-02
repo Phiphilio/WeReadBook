@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/mysql.php");
+require_once __DIR__ . "/mysql.php";
 try {
     $mySql = new PDO(
         // dans la chaine de connexion du pdo les espaces autour du "=" peuvent créer des erreurs
@@ -24,4 +24,5 @@ $livreStatement->execute();
 //l'ensemble des informations sont récupérées dans un tableau associatif
 //le tableau est stocké dans $listeLivre
 $listeLivre = $livreStatement->fetchAll();
+
 
