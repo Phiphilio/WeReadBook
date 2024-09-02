@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +13,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
-  <script type="module" src="../JS/index.js" defer></script>
 </head>
 
 <body>
@@ -21,11 +23,11 @@
       <h1 class="titre"> connexion </h1>
       <div class="formConnexion">
         <h3>Entrez vos informations</h3>
-        <form action="" method="post">
+        <form action="../../backend/submit_connexion.php" method="post">
           <label> adresse mail</label>
           <input type="mail" name="email" placeholder="exemple@exemple.fr">
           <label>mot de passe</label>
-          <input type="password" name="password">
+          <input type="password" name="motDePasse">
           <button>connexion</button>
           <a href="inscription.php">inscription</a>
         </form>

@@ -1,5 +1,5 @@
 <?php
-//connexion
+//debut de la session
 session_start();
 
 $postData = $_POST;

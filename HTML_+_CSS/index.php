@@ -1,5 +1,6 @@
 <?php
-
+//debut de la session
+session_start();
 require_once __DIR__ . "/../backend/connexionDb.php";
 
 ?>
