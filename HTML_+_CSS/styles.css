@@ -220,7 +220,7 @@ main {
         transition: all 5s;
     }
 
-    .categorie-liste-item::before{
+    /*.categorie-liste-item::before{
         content: '';
         position: absolute;
         top: 0;
@@ -233,12 +233,12 @@ main {
         transition: opacity 1s ease;
         opacity: 0;
     }
-    .categorie-liste-item:hover::before {
+   /*.categorie-liste-item:hover::before {
 
         background-color: white;
         
-        opacity: 1;
-    }
+        opacity: 0;/*j'ai mis à 0 parce que l'effet de changement me gênait*/
+   /* }*/
 
     .categorie-liste-item-contenu {
         display: flex;
