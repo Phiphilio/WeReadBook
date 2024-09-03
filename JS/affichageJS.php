@@ -188,6 +188,7 @@ function genererLivres(livre, listeBlock) {
     
 }
 
+if( userName ==="" && userId === "" ){
 function messageAlerte (button){ 
     const buttonSelectionner = document.querySelector(button);
     buttonSelectionner.addEventListener("click", (event)=>{
@@ -200,6 +201,6 @@ function messageAlerte (button){
 
 messageAlerte(".Reserve-button")
 messageAlerte(".disponible-button")
-
+}
 
 </script>
