@@ -45,8 +45,12 @@ require_once __DIR__ . "/../backend/connexionDb.php";
           <div class="book" data-title=<?php echo $livre["titre"]; ?> data-author=<?php echo $livre["auteur"]; ?> data-release-date=<?php echo $livre["date_sortie"]; ?>>
             <form action="/HTML_+_CSS/reservationFrontend.php" method="post">
               <div class="categorie-liste-item">
+                <div class="imgLivre">
+                  <img src="monteCristo.jpeg">
+                </div>
                 <div class="categorie-liste-item-contenu">
                   <?php if ($livre["disponible"] === 1): ?>
+                    <div class="info-livre">
                     <h2> <?php echo $livre["titre"] ?></h2>
                     <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
                     <!--informations envoyés-->
@@ -55,17 +59,22 @@ require_once __DIR__ . "/../backend/connexionDb.php";
                     <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                     <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
                     <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <button>réserver</button>
+                    <div> texte</div>
+                    </div>
+                    <button class="disponible-button">réserver</button>
                   <?php else: ?>
-                    <h2 class="Reserve"> <?php echo $livre["titre"] ?></h2>
+                    <div class="info-livre">
+                    <h2> <?php echo $livre["titre"] ?></h2>
                     <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
-                     <!--informations envoyés-->
+                    <!--informations envoyés-->
                     <input type="hidden" name ="titre" value=" <?php echo $livre["titre"] ?>">
                     <input type="hidden" name ="auteur" value=" <?php echo $livre["auteur"] ?>">
                     <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                     <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
                     <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <button>non disponible</button>
+                    <div> texte</div>
+                    </div>
+                    <button class="Reserve-button">non disponible</button>
                   <?php endif?>
             </form>
           </div>

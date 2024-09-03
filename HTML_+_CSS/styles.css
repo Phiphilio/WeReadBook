@@ -19,9 +19,6 @@ main {
     left: 23%;
 }
 
-.Reserve {
-    color: red;
-}
 
 /* pour les écrans desktop*/
 @media screen and (min-width: 1024px) {
@@ -208,55 +205,56 @@ main {
         flex-direction: column;
     }
 
+    .imgLivre {
+        overflow: hidden;
+    }
+
+    .imgLivre img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
     .categorie-liste-item {
         height: 246px;
         width: 90%;
         margin-bottom: 48px;
-        /* padding-right: 15px; */
-        /* max-width: 350px; */
         background-color: white;
         border-radius: 20px;
         padding: 5px;
-        filter: drop-shadow(5px 0px 5px #0c1f34);
-        margin-right: 70px;
-        transition: all 5s;
+        filter: drop-shadow(0px 0px 5px #0c1f34);
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
     }
-
-    /*.categorie-liste-item::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("monteCristo.jpeg");
-        background-size: cover;
-        background-position: center;
-        transition: opacity 1s ease;
-        opacity: 0;
-    }
-   /*.categorie-liste-item:hover::before {
-
-        background-color: white;
-        
-        opacity: 0;/*j'ai mis à 0 parce que l'effet de changement me gênait*/
-    /* }*/
 
     .categorie-liste-item-contenu {
         display: flex;
-        /* flex-wrap: wrap; */
-        margin-right: 50px;
-        flex-direction: column;
+        flex-direction: row;
         gap: 15px;
-        width: 360px;
+        width: 90%;
+        justify-content: space-between;
+        position: relative;
     }
 
-    .categorie-liste-item-contenu button {
+    .disponible-button {
         border-radius: 30px;
-        width: 100px;
-        height: 37px;
+        width: 150px;
+        height: 47px;
+        position: relative;
+        top: 75%;
+        right: 5%;
+        background: #09b643;
     }
-
+    .Reserve-button{
+        border-radius: 30px;
+        width: 150px;
+        height: 47px;
+        position: relative;
+        top: 75%;
+        right: 5%;
+        background: red;
+    }
     .block-liste-item div a {
         text-decoration: none;
         color: #000000;
