@@ -1,8 +1,7 @@
 <?php
 //debut de la session
 session_start();
-require_once __DIR__ . "/../backend/connexionDb.php";
-
+require_once (__DIR__ . "/../backend/connexionDb.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,7 @@ require_once __DIR__ . "/../backend/connexionDb.php";
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
-  <script type="module" src="../JS/index.js" defer></script>
+  <!--<script type="module" src="../JS/index.js" defer></script>-->
 </head>
 
 <body>
@@ -43,7 +42,12 @@ require_once __DIR__ . "/../backend/connexionDb.php";
       <div class="block-liste-item">
         <?php foreach ($listeLivre as $livre): ?>
           <div class="book" data-title=<?php echo $livre["titre"]; ?> data-author=<?php echo $livre["auteur"]; ?> data-release-date=<?php echo $livre["date_sortie"]; ?>>
-            <form action="/HTML_+_CSS/reservationFrontend.php" method="post">
+            <form action="<?php
+             if(isset($_SESSION["nom"]) && isset($_SESSION["user_id"])){
+              echo "/HTML_+_CSS/reservationFrontend.php";
+            } else {
+              echo "#";
+            }?>" method="post">
               <div class="categorie-liste-item">
                 <div class="imgLivre">
                   <img src="monteCristo.jpeg">
@@ -59,7 +63,7 @@ require_once __DIR__ . "/../backend/connexionDb.php";
                     <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                     <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
                     <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <div> texte</div>
+                    <div class="info-livre-texte "><?php require(__DIR__ ."/loremipsum.php");?></div>
                     </div>
                     <button class="disponible-button">réserver</button>
                   <?php else: ?>
@@ -72,9 +76,9 @@ require_once __DIR__ . "/../backend/connexionDb.php";
                     <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                     <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
                     <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <div> texte</div>
+                    <div class="info-livre-texte "><?php require(__DIR__ ."/loremipsum.php");?></div>
                     </div>
-                    <button class="Reserve-button">non disponible</button>
+                    <button class="Reserve-button">indisponible</button>
                   <?php endif?>
             </form>
           </div>
@@ -87,6 +91,7 @@ require_once __DIR__ . "/../backend/connexionDb.php";
   </main>
   <!--on récupère le footer-->
   <?php require_once __DIR__ . "/footer.php"?>
+  <?php require_once(__DIR__ . "/../JS/affichageJS.php"); ?>
 </body>
 
 </html>

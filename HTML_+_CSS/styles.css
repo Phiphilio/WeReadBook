@@ -237,18 +237,24 @@ main {
         position: relative;
     }
 
+    .info-livre-texte {
+        color: #000000;
+        width: 90%;
+        overflow-y: hidden;
+        height: 100px;
+    }
     .disponible-button {
         border-radius: 30px;
-        width: 150px;
+        width: 104px;
         height: 47px;
         position: relative;
         top: 75%;
         right: 5%;
         background: #09b643;
     }
-    .Reserve-button{
+    .Reserve-button {
         border-radius: 30px;
-        width: 150px;
+        width: 104px;
         height: 47px;
         position: relative;
         top: 75%;
