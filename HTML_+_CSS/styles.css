@@ -15,10 +15,8 @@ main {
     color: #0c1f34;
     font-size: 30px;
     font-weight: bold;
-    /* display: flex; */
-    /* justify-content: center; */
     position: absolute;
-    left: 3%;
+    left: 23%;
 }
 
 .Reserve {
@@ -187,31 +185,35 @@ main {
     /*la zone du milieu*/
     .middle-container {
         display: flex;
-        align-items: center;
         justify-content: center;
         margin-bottom: 200px;
         flex-direction: column;
+        position: relative;
     }
 
     #sortButtons {
         margin-bottom: 25px;
+        position: relative;
+        left: 35%;
+        width: 500px;
     }
 
     .block-liste-item {
         display: flex;
-        margin-left: 14%;
-        max-width: 962px;
-        min-width: 920px;
-        flex-wrap: wrap;
+        margin-left: 10%;
+        /* max-width: 962px; */
+        /* min-width: 920px; */
+        /* flex-wrap: wrap; */
         position: relative;
+        flex-direction: column;
     }
 
     .categorie-liste-item {
         height: 246px;
-        /* width: 50%; */
+        width: 90%;
         margin-bottom: 48px;
         /* padding-right: 15px; */
-        max-width: 350px;
+        /* max-width: 350px; */
         background-color: white;
         border-radius: 20px;
         padding: 5px;
@@ -238,7 +240,7 @@ main {
         background-color: white;
         
         opacity: 0;/*j'ai mis à 0 parce que l'effet de changement me gênait*/
-   /* }*/
+    /* }*/
 
     .categorie-liste-item-contenu {
         display: flex;
@@ -264,17 +266,11 @@ main {
         width: 350px;
     }
 
-    .categorie-liste-item {
-        height: 246px;
-        /* width: 50%; */
-        margin-bottom: 48px;
-        /* padding-right: 15px; */
-        max-width: 350px;
-        background-color: white;
-        border-radius: 20px;
-        padding: 5px;
-        filter: drop-shadow(5px 0px 5px #0c1f34);
+    .book {
+        width: 100%;
     }
+
+    form {}
 
     /*pour le footer*/
     .footer-container {

@@ -7,11 +7,19 @@
                     WeReadBook</a>
             <a href="reservationFrontend.php" id="HelpLink">2i Academy</a>
         </div>
+        <?php if(isset($_SESSION["nom"]) && isset($_SESSION["user_id"])):?>
+            <div class="navButton">
+            <section>
+            <a href="formulaires/deconnexion.php?"><button class="loginButton"> deconnexion</button></a>
+            </section>
+        </div>
+        <?php else : ?>
         <div class="navButton">
             <section>
             <a href="formulaires/connexion.php?"><button class="loginButton"> connexion</button></a>
             <a href="formulaires/inscription.php?"> <button class="signButton"> s'inscrire</button></a>
             </section>
         </div>
+        <?php endif?>
     </div>
 </header>
