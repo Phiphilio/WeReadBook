@@ -12,7 +12,7 @@ for (let i = 0; i < livres.length; i++) {
     const livre = livres[i];
 
     genererLivres(livre, listeLivres)
-    
+
     }
 }
 
@@ -48,7 +48,7 @@ function livresObtenus(livreTrouve, listeLivres) {
     if (livreTrouve) {
         //affichage dynamique des livre du livre correspondant
         genererLivres(livreTrouve, listeLivres)
-        
+
     } else {
         // récupère le div qui contiendra tous les livres
         console.log("test")
@@ -117,7 +117,7 @@ const userId = "<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 
 function genererLivres(livre, listeBlock) {
 
         console.log("coucou")
-        
+
         const bookDiv = document.createElement('div');
         bookDiv.className = 'book';
         bookDiv.setAttribute('data-title', livre.titre);
@@ -125,8 +125,8 @@ function genererLivres(livre, listeBlock) {
         bookDiv.setAttribute('data-release-date', livre.date_sortie);
 
         const form = document.createElement('form');
-        form.action = (userName && userId) 
-                      ? "/HTML_+_CSS/reservationFrontend.php" 
+        form.action = (userName && userId)
+                      ? "/HTML_+_CSS/reservationFrontend.php"
                       : "#";
         form.method = 'post';
 
@@ -148,7 +148,7 @@ function genererLivres(livre, listeBlock) {
         h2.textContent = livre.titre;
         const p = document.createElement('p');
         p.innerHTML = `Par ${livre.auteur}<br>Date de sortie: ${livre.date_sortie}`;
-        
+
         infoLivre.appendChild(h2);
         infoLivre.appendChild(p);
 
@@ -164,7 +164,7 @@ function genererLivres(livre, listeBlock) {
 
         const texteDiv = document.createElement('div');
         texteDiv.className="info-livre-texte "
-        texteDiv.textContent = '<?php require(__DIR__ ."/../HTML_+_CSS/loremipsum.php")?>';
+        texteDiv.textContent = '<?php require __DIR__ . "/../HTML_+_CSS/loremipsum.php"?>';
         infoLivre.appendChild(texteDiv);
 
         // Ajouter le bouton en fonction de la disponibilité du livre
@@ -185,16 +185,18 @@ function genererLivres(livre, listeBlock) {
         bookDiv.appendChild(form);
 
         listeBlock.appendChild(bookDiv);
-    
+
 }
 
 if( userName ==="" && userId === "" ){
-function messageAlerte (button){ 
-    const buttonSelectionner = document.querySelector(button);
-    buttonSelectionner.addEventListener("click", (event)=>{
+function messageAlerte (classeBouton){
+    const Boutons = document.querySelectorAll(classeBouton)
+    Boutons.forEach(bouton=> {
+        bouton.addEventListener("click", (event)=>{
         alert("vous devez être connecté pour pouvoir réserver un livre");
 
         event.preventDefault();
+        })
     })
 
 }
