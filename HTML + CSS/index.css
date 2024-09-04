@@ -20,6 +20,7 @@ footer {
 
 .tri {
    text-align: center ;
+   flex-wrap: wrap;
 }
 
 .booksGrid {
@@ -66,13 +67,21 @@ h2 {
     text-align: center;
 }
 
-input {
+input,
+button {
     margin-top: 1rem;
     padding: 0.5rem;
     width: 80%;
     max-width: 400px;
     border: none;
-    border-radius: 4px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.tri-recherche {
+    background-color: black;
+    color: white;
 }
 
 .bookItem {
