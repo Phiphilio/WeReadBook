@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Le seigneur des anneaux",
+        "author": "J.R.R. Tolkien",
+        "published_date": "1954-07-29",
+        "reserved": false,
+        "image": "../Images/Tolkiens.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Le livre du voyage",
+        "author": "Bernard Werber",
+        "published_date": "1997-05-21",
+        "reserved": false,
+        "image": "../Images/Werber.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Le grand livre des gnomes",
+        "author": "Terry Pratchett",
+        "published_date": "1992-01-01",
+        "reserved": false,
+        "image": "../Images/Pratchett.jpg"
+    },
+    {
+        "id": 4,
+        "title": "1984",
+        "author": "George Orwell",
+        "published_date": "1949-06-08",
+        "reserved": false,
+        "image": "../Images/Orwell.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Le petit prince",
+        "author": "Antoine de Saint-Exupéry",
+        "published_date": "1943-04-06",
+        "reserved": false,
+        "image": "../Images/Saint-Exupery.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Harry Potter à l'école des sorciers",
+        "author": "J.K. Rowling",
+        "published_date": "1997-06-26",
+        "reserved": false,
+        "image": "../Images/JK-Rowling.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Les Misérables",
+        "author": "Victor Hugo",
+        "published_date": "1862-04-03",
+        "reserved": false,
+        "image": "../Images/V.Hugo.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Le Comte de Monte-Cristo",
+        "author": "Alexandre Dumas",
+        "published_date": "1844-08-28",
+        "reserved": false,
+        "image": "../Images/Dumas.jpg"
+    },
+    {
+        "id": 9,
+        "title": "L'alchimiste",
+        "author": "Paulo Coelho",
+        "published_date": "1988-05-01",
+        "reserved": false,
+        "image": "../Images/Coelho.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Don Quichotte",
+        "author": "Miguel de Cervantes",
+        "published_date": "1605-01-16",
+        "reserved": false,
+        "image": "../Images/Cervantes.jpg"
+    }
+]

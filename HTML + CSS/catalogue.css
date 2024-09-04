@@ -1,5 +1,5 @@
 body {
-    font-family: "Manrope", sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
     background-color: rgb(229, 253, 246);
@@ -59,7 +59,7 @@ input {
     border-radius: 4px;
 }
 
-#booksList {
+#bookList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
