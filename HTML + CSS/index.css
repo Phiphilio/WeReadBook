@@ -97,8 +97,9 @@ input {
     padding: 50px;
     margin-bottom: 80px;
     margin-top: 80px;
-    grid-row-gap: 50px;
+    grid-row-gap: 200px;        
 }
+/* Espacement entre les lignes grid-row-gap */
 
 .bookImage:hover {
     position: absolute;
