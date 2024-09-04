@@ -26,7 +26,7 @@
         </div>
         <div class="copyright-footer-column">
             <p>copyright 2024</br />
-                GrapperCosmo Studio, Inc<br />
+                2I tech Academy, Inc<br />
                 All rights reserved</p>
             <!--si je mets les <br/> entre des éléments en <p></p> il y aura un plus grand retour à la-->
         </div>
