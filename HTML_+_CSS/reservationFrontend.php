@@ -45,19 +45,19 @@ if (
             <div>
                <form action="../backend/reservations.php" method="post">
                <div>
-               <div>
-                  <img src="">
+               <div class="div-image-Livre">
+                  <img src="monteCristo.jpeg">
                 </div>
-                <div>
+                <div class="div-info-livre">
                   <h1><?php echo $postData["titre"] ?><h1>
                   <h2><?php echo "Par" . $postData["auteur"] ?></h2>
                   <p> <?php echo "<br>Date de sortie: " . $postData["date_sortie"] ?></p>
                   <input type="hidden" name="id" value="<?php echo $postData["id"] ?>">
                 </div>
                </div>
-               <div>
-                <p>lorem ipsum lorem ipsum lorem ipsum <p>
-               </div>
+               <div class="div-description-livre">
+                <p><?php require_once(__DIR__ . "/loremipsum.php")?> <p>
+               </div class="div-bouton">
                 <?php if ($postData["disponible"] == 1): ?>
                 <button>reserver</button>
                 <?php else: ?>

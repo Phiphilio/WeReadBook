@@ -1,4 +1,20 @@
 .livre-container {
-    height: 500px;
-    width: 100%;
+     height: 100%; 
+    /* width: 100%; */
 }
+.top-livre-container{}
+.top-livre-container div {
+    display: flex;
+    flex-direction: row;
+}
+.div-image-Livre {}
+
+.div-image-Livre img {
+    width: 70%;
+    height: 80%;
+}
+.div-info-livre {}
+
+.div-description-livre {}
+
+.div-bouton {}
