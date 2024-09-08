@@ -1,14 +1,21 @@
-<?php 
-/**pour que les éléments affichés par javascript gardent la même cohérence que ceux affiché depuis php
-j'ai préféré utiliser les informations de la base de donnée*/
-require_once(__DIR__ . "/connexionDb.php");
-//pour récupérer les données en json depuis mon script javascript
-//le echo permet de faire en sorte que le javascript interprète l'info
-//la fonction json_encode crée un tableau qui contient des objets correspondant à chaque sous tableau
-echo json_encode($listeLivre);
-/**
- * j'ai mis le "echo " pour pouvoir exécuter le fetch de mon javascript vers ici.
- * si je l'avais mis dans connexionDB.php, le echo s'afficherait aussi dans le fichier
- * index.php
- */
-?>
+<?php
+
+require_once __DIR__ . "/connexionDb.php";
+
+if (!$listeLivre || !$infoLivres) {
+    http_response_code(500); // Statut HTTP 500 pour erreur serveur
+    echo json_encode(["error" => "Erreur lors de la récupération des données."]);
+    exit;
+}
+
+header('Content-Type: application/json');
+
+// je réunis les deux tableaux dans un seul
+$response = [
+    //livres
+    "livres" => $listeLivre,
+    // données de ma jointure
+    "infoLivres" => $infoLivres,
+];
+
+echo json_encode($response);
