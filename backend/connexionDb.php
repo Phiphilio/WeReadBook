@@ -26,3 +26,11 @@ $livreStatement->execute();
 $listeLivre = $livreStatement->fetchAll();
 
 
+//récupère les données de la table info-livres
+$RequeteJointure = $jointure;
+
+$infoLivresStatement = $mySql->prepare($RequeteJointure);
+
+$infoLivresStatement->execute();
+
+$infoLivres = $infoLivresStatement->fetchAll();
