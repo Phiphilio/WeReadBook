@@ -46,7 +46,7 @@ if (
                <form action="../backend/reservations.php" method="post">
                <div>
                <div class="div-image-Livre">
-                  <img src="monteCristo.jpeg">
+                  <img src="images/monteCristo.jpeg">
                 </div>
                 <div class="div-info-livre">
                   <h1><?php echo $postData["titre"] ?><h1>

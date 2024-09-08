@@ -50,7 +50,7 @@ require_once (__DIR__ . "/../backend/connexionDb.php");
             }?>" method="post">
               <div class="categorie-liste-item">
                 <div class="imgLivre">
-                  <img src="monteCristo.jpeg">
+                  <img src="images/monteCristo.jpeg">
                 </div>
                 <div class="categorie-liste-item-contenu">
                   <?php if ($livre["disponible"] === 1): ?>
