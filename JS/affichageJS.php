@@ -136,7 +136,7 @@ function genererLivres(livre, listeBlock) {
         const imgLivre = document.createElement('div');
         imgLivre.className = 'imgLivre';
         const img = document.createElement('img');
-        img.src = 'monteCristo.jpeg';
+        img.src = 'images/monteCristo.jpeg';
         imgLivre.appendChild(img);
 
         const categorieListeItemContenu = document.createElement('div');
