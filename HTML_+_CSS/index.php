@@ -1,7 +1,8 @@
 <?php
 //debut de la session
 session_start();
-require_once (__DIR__ . "/../backend/connexionDb.php");
+require_once(__DIR__ . "/../backend/connexionDb.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@ require_once (__DIR__ . "/../backend/connexionDb.php");
 
 <body>
   <!-- on récupre de le header-->
-  <?php require_once __DIR__ . "/header.php"?>
+  <?php require_once __DIR__ . "/header.php" ?>
   <main>
     <section class=" middleTop container">
       <div class="searchBox">
@@ -43,54 +44,60 @@ require_once (__DIR__ . "/../backend/connexionDb.php");
         <?php foreach ($listeLivre as $livre): ?>
           <div class="book" data-title=<?php echo $livre["titre"]; ?> data-author=<?php echo $livre["auteur"]; ?> data-release-date=<?php echo $livre["date_sortie"]; ?>>
             <form action="<?php
-             if(isset($_SESSION["nom"]) && isset($_SESSION["user_id"])){
-              echo "/HTML_+_CSS/reservationFrontend.php";
-            } else {
-              echo "#";
-            }?>" method="post">
+                          if (isset($_SESSION["nom"]) && isset($_SESSION["user_id"])) {
+                            echo "/HTML_+_CSS/reservationFrontend.php";
+                          } else {
+                            echo "#";
+                          } ?>" method="post">
               <div class="categorie-liste-item">
                 <div class="imgLivre">
-                  <img src="images/monteCristo.jpeg">
+                  <?php foreach ($infoLivres as $info) : ?>
+                    <?php
+                    if ($livre["id"] === $info["livre_id"]): ?>
+                      <img src="<?php echo $info["url_livre"] ?>" alt="image">;
+                      <input type="hidden" name="url_livre" value=" <?php echo $info["url_livre"] ?>">
+                    <?php endif ?>
+                  <?php endforeach ?>
                 </div>
                 <div class="categorie-liste-item-contenu">
                   <?php if ($livre["disponible"] === 1): ?>
                     <div class="info-livre">
-                    <h2> <?php echo $livre["titre"] ?></h2>
-                    <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
-                    <!--informations envoyés-->
-                    <input type="hidden" name ="titre" value=" <?php echo $livre["titre"] ?>">
-                    <input type="hidden" name ="auteur" value=" <?php echo $livre["auteur"] ?>">
-                    <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
-                    <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
-                    <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <div class="info-livre-texte "><?php require(__DIR__ ."/loremipsum.php");?></div>
+                      <h2> <?php echo $livre["titre"] ?></h2>
+                      <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
+                      <!--informations envoyés-->
+                      <input type="hidden" name="titre" value=" <?php echo $livre["titre"] ?>">
+                      <input type="hidden" name="auteur" value=" <?php echo $livre["auteur"] ?>">
+                      <input type="hidden" name="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
+                      <input type="hidden" name="disponible" value=" <?php echo $livre["disponible"] ?>">
+                      <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
+                      <div class="info-livre-texte "><?php echo $livre["description"];; ?></div>
                     </div>
                     <button class="disponible-button">réserver</button>
                   <?php else: ?>
                     <div class="info-livre">
-                    <h2> <?php echo $livre["titre"] ?></h2>
-                    <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
-                    <!--informations envoyés-->
-                    <input type="hidden" name ="titre" value=" <?php echo $livre["titre"] ?>">
-                    <input type="hidden" name ="auteur" value=" <?php echo $livre["auteur"] ?>">
-                    <input type="hidden" name ="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
-                    <input type="hidden" name ="disponible" value=" <?php echo $livre["disponible"] ?>">
-                    <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
-                    <div class="info-livre-texte "><?php require(__DIR__ ."/loremipsum.php");?></div>
+                      <h2> <?php echo $livre["titre"] ?></h2>
+                      <p> <?php echo "Par " . $livre["auteur"] . "<br>Date de sortie: " . $livre["date_sortie"] ?></p>
+                      <!--informations envoyés-->
+                      <input type="hidden" name="titre" value=" <?php echo $livre["titre"] ?>">
+                      <input type="hidden" name="auteur" value=" <?php echo $livre["auteur"] ?>">
+                      <input type="hidden" name="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
+                      <input type="hidden" name="disponible" value=" <?php echo $livre["disponible"] ?>">
+                      <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
+                      <div class="info-livre-texte "><?php echo $livre["description"]; ?></div>
                     </div>
                     <button class="Reserve-button">indisponible</button>
-                  <?php endif?>
+                  <?php endif ?>
             </form>
           </div>
       </div>
       </div>
-    <?php endforeach?>
+    <?php endforeach ?>
     </div>
     </div>
     </section>
   </main>
   <!--on récupère le footer-->
-  <?php require_once __DIR__ . "/footer.php"?>
+  <?php require_once __DIR__ . "/footer.php" ?>
   <?php require_once(__DIR__ . "/../JS/affichageJS.php"); ?>
 </body>
 
