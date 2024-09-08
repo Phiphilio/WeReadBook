@@ -5,13 +5,13 @@ session_start();
 $postData = $_POST;
 //on teste les informations envoyées
 if (
-    !isset($postData["titre"]) ||
-    !isset($postData["auteur"]) ||
-    !isset($postData["date_sortie"]) ||
-    !isset($postData["id"]) ||
-    !isset($postData["disponible"])
+  !isset($postData["titre"]) ||
+  !isset($postData["auteur"]) ||
+  !isset($postData["date_sortie"]) ||
+  !isset($postData["id"]) ||
+  !isset($postData["disponible"])
 ) {
-    echo "pas là";
+  echo "pas là";
 }
 
 ?>
@@ -35,42 +35,43 @@ if (
 
 <body>
 
-<!--header-->
-<?php require_once __DIR__ . "/header.php";?>
+  <!--header-->
+  <?php require_once __DIR__ . "/header.php"; ?>
 
-<!--main-->
-<main>
+  <!--main-->
+  <main>
     <div class="livre-container">
-        <div class="top-livre-container">
+      <div class="top-livre-container">
+        <div>
+          <form action="../backend/reservations.php" method="post">
             <div>
-               <form action="../backend/reservations.php" method="post">
-               <div>
-               <div class="div-image-Livre">
-                  <img src="images/monteCristo.jpeg">
-                </div>
-                <div class="div-info-livre">
-                  <h1><?php echo $postData["titre"] ?><h1>
-                  <h2><?php echo "Par" . $postData["auteur"] ?></h2>
-                  <p> <?php echo "<br>Date de sortie: " . $postData["date_sortie"] ?></p>
-                  <input type="hidden" name="id" value="<?php echo $postData["id"] ?>">
-                </div>
-               </div>
-               <div class="div-description-livre">
-                <p><?php require_once(__DIR__ . "/loremipsum.php")?> <p>
-               </div class="div-bouton">
-                <?php if ($postData["disponible"] == 1): ?>
-                <button>reserver</button>
-                <?php else: ?>
-                  <button> non disponible</button>
-                  <?php endif?>
-               </form>
+              <div class="div-image-Livre">
+                <img src="<?php echo $postData["url_livre"] ?>">
+              </div>
+              <div class="div-info-livre">
+                <h1><?php echo $postData["titre"] ?><h1>
+                    <h2><?php echo "Par" . $postData["auteur"] ?></h2>
+                    <p> <?php echo "<br>Date de sortie: " . $postData["date_sortie"] ?></p>
+                    <input type="hidden" name="id" value="<?php echo $postData["id"] ?>">
+              </div>
             </div>
+            <div class="div-description-livre">
+              <p><?php require_once(__DIR__ . "/loremipsum.php") ?>
+              <p>
+            </div class="div-bouton">
+            <?php if ($postData["disponible"] == 1): ?>
+              <button>reserver</button>
+            <?php else: ?>
+              <button> non disponible</button>
+            <?php endif ?>
+          </form>
         </div>
-        <div class="middle-livre-container">
-          <a href= "index.php">retourner à accueil</a>
-        </div>
+      </div>
+      <div class="middle-livre-container">
+        <a href="index.php">retourner à accueil</a>
+      </div>
     </div>
-</main>
-<!--footer-->
-<?php require_once __DIR__ . "/footer.php";?>
+  </main>
+  <!--footer-->
+  <?php require_once __DIR__ . "/footer.php"; ?>
 </body>
