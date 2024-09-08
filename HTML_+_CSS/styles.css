@@ -207,6 +207,10 @@ main {
 
     .imgLivre {
         overflow: hidden;
+        border: solid 1px;
+        border-radius: 20px;
+        width: 193px;
+        height: 244px;
     }
 
     .imgLivre img {
@@ -243,6 +247,7 @@ main {
         overflow-y: hidden;
         height: 100px;
     }
+
     .disponible-button {
         border-radius: 30px;
         width: 104px;
@@ -252,6 +257,7 @@ main {
         right: 5%;
         background: #09b643;
     }
+
     .Reserve-button {
         border-radius: 30px;
         width: 104px;
@@ -261,6 +267,7 @@ main {
         right: 5%;
         background: red;
     }
+
     .block-liste-item div a {
         text-decoration: none;
         color: #000000;
