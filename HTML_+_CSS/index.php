@@ -56,6 +56,7 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
                     if ($livre["id"] === $info["livre_id"]): ?>
                       <img src="<?php echo $info["url_livre"] ?>" alt="image">;
                       <input type="hidden" name="url_livre" value=" <?php echo $info["url_livre"] ?>">
+                      <input type="hidden" name="livre_description" value=" <?php echo $info["livre_description"] ?>">
                     <?php endif ?>
                   <?php endforeach ?>
                 </div>
@@ -69,6 +70,7 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
                       <input type="hidden" name="auteur" value=" <?php echo $livre["auteur"] ?>">
                       <input type="hidden" name="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                       <input type="hidden" name="disponible" value=" <?php echo $livre["disponible"] ?>">
+                      <input type="hidden" name="genre" value="<?php echo $livre["genre"] ?>">
                       <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
                       <div class="info-livre-texte "><?php echo $livre["description"];; ?></div>
                     </div>
@@ -82,6 +84,7 @@ require_once(__DIR__ . "/../backend/connexionDb.php");
                       <input type="hidden" name="auteur" value=" <?php echo $livre["auteur"] ?>">
                       <input type="hidden" name="date_sortie" value=" <?php echo $livre["date_sortie"] ?>">
                       <input type="hidden" name="disponible" value=" <?php echo $livre["disponible"] ?>">
+                      <input type="hidden" name="genre" value="<?php echo $livre["genre"] ?>">
                       <input type="hidden" name="id" value="<?php echo $livre["id"] ?>">
                       <div class="info-livre-texte "><?php echo $livre["description"]; ?></div>
                     </div>
