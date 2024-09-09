@@ -3,6 +3,7 @@
 session_start();
 
 $postData = $_POST;
+
 //on teste les informations envoyées
 if (
   !isset($postData["titre"]) ||
@@ -30,7 +31,8 @@ if (
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
-  <script type="module" src="../JS/index.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -45,31 +47,48 @@ if (
         <div>
           <form action="../backend/reservations.php" method="post">
             <div>
-              <div class="div-image-Livre">
-                <img src="<?php echo $postData["url_livre"] ?>">
+              <div>
+                <div class="div-image-Livre">
+                  <img src="<?php echo $postData["url_livre"] ?>">
+                </div>
+                <div id="div-info-livre">
+                  <h1><?php echo $postData["titre"] ?></h1>
+                  <p><?php echo "<strong>Par</strong>" . $postData["auteur"] ?></p>
+                  <p><?php echo "<strong>genre</strong> : " . $postData["genre"] ?></pS>
+                  <p> <?php echo "<br> <strong>Date de sortie: </strong>" . $postData["date_sortie"] ?></p>
+                  <p> <br><strong>note :
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </strong></p>
+                  <input type="hidden" name="id" value="<?php echo $postData["id"] ?>">
+                </div>
               </div>
-              <div class="div-info-livre">
-                <h1><?php echo $postData["titre"] ?><h1>
-                    <h2><?php echo "Par" . $postData["auteur"] ?></h2>
-                    <p> <?php echo "<br>Date de sortie: " . $postData["date_sortie"] ?></p>
-                    <input type="hidden" name="id" value="<?php echo $postData["id"] ?>">
+              <div>
+                <div id="div-bouton">
+                  <?php if ($postData["disponible"] == 1): ?>
+                    <button class="reserver">reserver</button>
+                  <?php else: ?>
+                    <button class="non-disponible"> non disponible</button>
+                  <?php endif ?>
+                </div>
               </div>
             </div>
             <div class="div-description-livre">
-              <p><?php require_once(__DIR__ . "/loremipsum.php") ?>
-              <p>
-            </div class="div-bouton">
-            <?php if ($postData["disponible"] == 1): ?>
-              <button>reserver</button>
-            <?php else: ?>
-              <button> non disponible</button>
-            <?php endif ?>
+              <p><?php echo $postData["livre_description"] ?></p>
+            </div>
           </form>
         </div>
       </div>
       <div class="middle-livre-container">
-        <a href="index.php">retourner à accueil</a>
+        <h1>Recommandations</h1>
+        <div class="conteneur-recommandations">
+          ki lo fe
+        </div>
       </div>
+      <div><a href="index.php">retourner à accueil</a></div>
     </div>
   </main>
   <!--footer-->
