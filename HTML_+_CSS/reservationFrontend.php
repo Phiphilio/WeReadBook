@@ -85,7 +85,7 @@ if (
       <div class="middle-livre-container">
         <h1>Recommandations</h1>
         <div class="conteneur-recommandations">
-          ki lo fe
+          <p> à venir </p>
         </div>
       </div>
       <div><a href="index.php">retourner à accueil</a></div>
