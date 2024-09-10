@@ -33,4 +33,4 @@ $infoLivresStatement = $mySql->prepare($RequeteJointure);
 
 $infoLivresStatement->execute();
 
-$infoLivres = $infoLivresStatement->fetchAll();
+$infoLivres = $infoLivresStatement->fetchAll(PDO::FETCH_ASSOC);
