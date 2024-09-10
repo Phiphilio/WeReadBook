@@ -14,24 +14,34 @@
 
 
 
-    function afficherLivres(tableauLivre) {
+    function reAfficherLivres(tableauLivre) {
 
         // récupère le div qui contiendra tous les livres
         const listeLivres = document.querySelector(".block-liste-item")
         listeLivres.innerHTML = ""
 
         for (let i = 0; i < tableauLivre.livres.length; i++) {
+
             const livre = tableauLivre.livres[i];
-            const infoLivre = tableauLivre.infoLivres[i]
+            const infoLivre = tableauLivre.infoLivres
+
             genererLivres(livre, listeLivres, infoLivre)
 
         }
     }
 
+    const searchInput = document.getElementById("searchInput");
+    //ajout d'un listener qui écoute l'input et réagit quand la valeur qu'il contient est vide
+    searchInput.addEventListener("input", async () => {
 
+        if (searchInput.value === "") {
+            // j'ai regardé la valeur contenu dans l'input et si elle est vide ("") j'appelle la fonction
+            /**pour avoir une chaine vide, il faut juste mettre "" */
+            const donneesLivre = await fetchLivres()
+            reAfficherLivres(donneesLivre)
+        }
+    })
 
-    // j'appelle la fonction pour qu'elle s'exécute
-    //afficherLivres()
 
     //fonction de recherche de livre
     function rechercherLivres(recherche, bok, infoLivre) {
@@ -84,7 +94,6 @@
 
     }
 
-    const searchInput = document.getElementById("searchInput");
 
     //ajout d'un listener qui écoute l'évènement keydown et qui regarde quand keydown correspond à la touche entrer (enter)
     searchInput.addEventListener("keydown", async (event) => {
@@ -96,25 +105,11 @@
 
     });
 
-    //ajout d'un listener qui écoute l'input et réagit quand la valeur qu'il contient est vide
-    searchInput.addEventListener("input", async () => {
-
-        if (searchInput.value === "") {
-            // j'ai regardé la valeur contenu dans l'input et si elle est vide ("") j'appelle la fonction
-            /**pour avoir une chaine vide, il faut juste mettre "" */
-            const donneesLivre = await fetchLivres()
-            afficherLivres(donneesLivre)
-        }
-    })
-
-
     //récupère les valeurs de la session
     const userName = "<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>";
     const userId = "<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>";
 
     function genererLivres(livre, listeBlock, info) {
-
-        console.log("coucou")
 
         const bookDiv = document.createElement('div');
         bookDiv.className = 'book';
@@ -134,9 +129,22 @@
         const imgLivre = document.createElement('div');
         imgLivre.className = 'imgLivre';
         const img = document.createElement('img');
-        img.src = info.url_livre;
-        console.log("ce que contient info", info)
-        imgLivre.appendChild(img);
+
+        const champCacheInfoLivres = ["url_livre", "livre_description"];
+        for (let k = 0; k < info.length; k++) {
+            if (info[k].livre_id === livre.id) {
+                img.src = info[k].url_livre;
+                imgLivre.appendChild(img);
+                for (let L = 0; L < champCacheInfoLivres.length; L++) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = champCacheInfoLivres[L];
+                    input.value = info[k][champCacheInfoLivres[L]];
+                    form.appendChild(input);
+                }
+            }
+        }
+
 
         const categorieListeItemContenu = document.createElement('div');
         categorieListeItemContenu.className = 'categorie-liste-item-contenu';
@@ -152,14 +160,15 @@
         infoLivre.appendChild(p);
 
         // Créer les champs cachés avec les informations du livre
-        const hiddenFields = ['titre', 'auteur', 'date_sortie', 'disponible', 'id'];
-        for (let j = 0; j < hiddenFields.length; j++) {
+        const champCacheLivres = ['titre', 'auteur', 'date_sortie', 'disponible', 'id'];
+        for (let j = 0; j < champCacheLivres.length; j++) {
             const input = document.createElement('input');
             input.type = 'hidden';
-            input.name = hiddenFields[j];
-            input.value = livre[hiddenFields[j]];
+            input.name = champCacheLivres[j];
+            input.value = livre[champCacheLivres[j]];
             form.appendChild(input);
         }
+
 
         const texteDiv = document.createElement('div');
         texteDiv.className = "info-livre-texte "
