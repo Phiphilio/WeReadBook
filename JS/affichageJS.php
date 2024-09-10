@@ -107,20 +107,6 @@
         }
     })
 
-    function disponibleSwap(value) {
-        if (value !== 1) {
-            return "Reserve";
-        }
-    }
-
-    function disponibleButton(value) {
-        if (value == 1) {
-            //comme c'est égale à 1, c'est possible de réserver
-            return "reserver";
-        } else {
-            return "non disponible"
-        }
-    }
 
     //récupère les valeurs de la session
     const userName = "<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>";
