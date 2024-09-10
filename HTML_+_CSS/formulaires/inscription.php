@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -16,9 +14,9 @@
 </head>
 
 <body>
-<!--on récupère le header-->
-<?php require_once(__DIR__ ."/headerForm.php");?>
-<main>
+  <!--on récupère le header-->
+  <?php require_once(__DIR__ . "/headerForm.php"); ?>
+  <main>
     <div>
       <h1 class="titre"> inscription </h1>
       <div class="formInscription">
@@ -29,7 +27,7 @@
           <label>mot de passe</label>
           <input type="password" name="password">
           <label>confirmez mot de passe</label>
-          <input type="password" name="password">
+          <input type="password" name="verificationPassword">
           <button>inscription</button>
           <a href="connexion.php">connexion</a>
         </form>
