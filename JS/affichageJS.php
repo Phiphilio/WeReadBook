@@ -160,7 +160,7 @@
         infoLivre.appendChild(p);
 
         // Créer les champs cachés avec les informations du livre
-        const champCacheLivres = ['titre', 'auteur', 'date_sortie', 'disponible', 'id'];
+        const champCacheLivres = ['titre', 'auteur', 'date_sortie', 'disponible', 'id', 'genre'];
         for (let j = 0; j < champCacheLivres.length; j++) {
             const input = document.createElement('input');
             input.type = 'hidden';
