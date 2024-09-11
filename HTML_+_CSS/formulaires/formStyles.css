@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif; /* Ajout de la police d'écriture */
+    font-family: 'Lato', sans-serif;
+    /* Ajout de la police d'écriture */
     background: conic-gradient(from 45deg at 40% 50%, #ffffff, #d6d4f6, #adabeb, #8184e1, #4c5fd5);
 }
 
@@ -12,7 +13,7 @@ body {
 
 /** barre de navigation**/
 header {
-   /* background: linear-gradient(0deg, #000000, #1b1c34, #2c3165, #3c479b, #4c5fd5);*/
+    /* background: linear-gradient(0deg, #000000, #1b1c34, #2c3165, #3c479b, #4c5fd5);*/
     color: #fff;
     height: 88px;
 }
@@ -67,21 +68,25 @@ main {
     display: flex;
     flex-direction: column;
     height: 700px;
-   
+
 }
+
 main div {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.titre{
+
+.titre {
     color: white;
 }
-.formInscription, .formConnexion {
+
+.formInscription,
+.formConnexion {
     min-height: 115px;
-    width: 35%;
-    height: 360px;
+    width: 33%;
+    /* height: 360px; */
     margin-bottom: 48px;
     padding-right: 15px;
     /* max-width: 350px; */
@@ -90,6 +95,7 @@ main div {
     padding: 7px;
     filter: drop-shadow(5px 0px 5px #4C5FD5);
 }
+
 /*l'interieur du formulaire*/
 form {
     display: flex;
@@ -98,9 +104,11 @@ form {
     justify-content: center;
     gap: 5px;
 }
+
 form label {
     font-style: italic;
 }
+
 form input {
     /* padding: 10px; */
     font-size: 16px;
@@ -117,16 +125,19 @@ form button {
     border: 1px solid white;
     border-radius: 7px;
 }
+
 form button:hover {
     color: #4C5FD5;
     background: white;
     border: 1px solid black;
     border-radius: 7px;
 }
+
 form a {
     text-decoration: none;
 }
-form a:hover{
+
+form a:hover {
     color: #4C5FD5;
     text-decoration: underline;
 }

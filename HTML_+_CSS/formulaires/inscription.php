@@ -21,13 +21,15 @@
       <h1 class="titre"> inscription </h1>
       <div class="formInscription">
         <h3>Entrez vos informations</h3>
-        <form action="" method="post">
+        <form action="inscriptionDonneesDB.php" method="post">
+          <label> nom </label>
+          <input type="text" name="nom" placeholder="ex: DUPONT">
           <label> adresse mail</label>
           <input type="mail" name="email" placeholder="exemple@exemple.fr">
           <label>mot de passe</label>
-          <input type="password" name="password">
+          <input type="password" name="mdp">
           <label>confirmez mot de passe</label>
-          <input type="password" name="verificationPassword">
+          <input type="password" name="verificationMdp">
           <button>inscription</button>
           <a href="connexion.php">connexion</a>
         </form>
