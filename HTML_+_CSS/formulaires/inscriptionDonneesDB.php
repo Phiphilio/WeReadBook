@@ -17,31 +17,25 @@ foreach ($listeUser as $user) {
 }
 
 if (
-    empty($postDonnees["nom"]) &&
-    empty($postDonnees["mdp"]) &&
-    empty($postDonnees["verificationMdp"])
+    empty($postDonnees["mdp"]) || empty($postDonnees["verificationMdp"])
 ) {
-    echo "tous les champs doivent êtres remplis";
+    echo json_encode("les deux champs doivent contenir le même mot de passe");
     exit();
 }
 
+if ($psotDonnees["mdp"] !== $psotDonnees["verificationMdp"]) {
+    header('HTTP/1.1 400 Bad Request');
+    echo json_encode("les deux mots de passe doivent correspondre");
+    exit();
+}
 if (
-    !isset($postDonnees["nom"]) &&
-    !isset($postDonnees["email"]) &&
-    !isset($postDonnees["mdp"]) &&
-    !isset($postDonnees["verificationMdp"])
+    empty($postDonnees["nom"]) || strlen($postDonnees["nom"]) > 50
+
 ) {
-    echo ("le formulaire n'est pas complet");
+    header('HTTP/1.1 400 Bad Request');
+    echo json_encode("entrez un nom d'utilisateur pas trop long");
     exit();
 }
-
-
-if ($postDonnees["mdp"] !== $postDonnees["verificationMdp"]) {
-    echo "les deux mot de passe doivent se correspondre";
-    exit();
-}
-
-
 
 if (strlen($postDonnees["mdp"]) < 6) {
     header('HTTP/1.1 400 Bad Request');
