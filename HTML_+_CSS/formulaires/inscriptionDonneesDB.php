@@ -2,7 +2,14 @@
 require_once(__DIR__ . "/../../backend/connexionDb.php");
 $postDonnees = $_POST;
 
-if (empty($postDonnees["email"]) || !filter_var($postDonnees["email"], FILTER_VALIDATE_EMAIL)) {
+//on me conseille de nettoyer les nformations entrées dans les inputs
+$nom = trim($postDonnees["nom"]);
+$email = trim($postDonnees["email"]);
+$mdp = trim($psotDonnees["mdp"]);
+$verificationMdp = trim($psotDonnees["verificationMdp"]);
+
+
+if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header('HTTP/1.1 400 bad Request');
     echo json_encode("l'adresse email n'est pas valide");
     exit();
@@ -17,20 +24,19 @@ foreach ($listeUser as $user) {
 }
 
 if (
-    empty($postDonnees["mdp"]) || empty($postDonnees["verificationMdp"])
+    empty($mdp) || empty($postDonnees["verificationMdp"])
 ) {
     echo json_encode("les deux champs doivent contenir le même mot de passe");
     exit();
 }
 
-if ($psotDonnees["mdp"] !== $psotDonnees["verificationMdp"]) {
+if ($mdp !== $psotDonnees["verificationMdp"]) {
     header('HTTP/1.1 400 Bad Request');
     echo json_encode("les deux mots de passe doivent correspondre");
     exit();
 }
 if (
-    empty($postDonnees["nom"]) || strlen($postDonnees["nom"]) > 50
-
+    empty($nom) || strlen($nom) > 50
 ) {
     header('HTTP/1.1 400 Bad Request');
     echo json_encode("entrez un nom d'utilisateur pas trop long");
